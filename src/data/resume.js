@@ -20,8 +20,8 @@ export const experience = [
     location: "Remote",
     period: "Nov 2025 – Feb 2026",
     bullets: [
-      "Built the Compyle Apps Showcase, a full-stack platform for discovering and sharing community-built applications, enabling self-serve publishing for the first time. (TypeScript, REST APIs)",
-      "Authored end-to-end developer documentation covering project setup, deployment workflows, and Git practices, adopted as the canonical onboarding reference for all new contributors.",
+      "Built the Compyle Apps Showcase from scratch, a full-stack discovery platform enabling community self-serve app publishing for the first time. (TypeScript, REST APIs)",
+      "Authored comprehensive developer documentation covering project setup, deployment workflows, and Git practices, adopted as the canonical onboarding reference across all new contributors.",
     ],
   },
   {
@@ -30,10 +30,10 @@ export const experience = [
     location: "Fukuoka, Japan",
     period: "Feb 2025 – May 2025",
     bullets: [
-      "Built a vision-based robotic perception system using Python + Intel RealSense, achieving 95% object detection accuracy with real-time distance estimation.",
-      "Trained a CNN + LSTM gesture recognition pipeline on 100K+ hand gesture samples, enabling real-time robotic arm control with 90%+ accuracy.",
+      "Designed and built a vision-based robotic perception system using Python and Intel RealSense, achieving 95% object detection accuracy with real-time distance estimation.",
+      "Trained a CNN + LSTM gesture recognition pipeline on 100K+ hand gesture samples, enabling real-time robotic arm control at 90%+ accuracy.",
       "Reduced model training time by 60% through redesigned preprocessing and feature engineering pipelines.",
-      "Co-authored a research paper accepted at ICIEV/IVPR (oral + poster), advancing robotic vision perception.",
+      "Co-authored a research paper accepted at ICIEV/IVPR (oral and poster presentation) on advances in robotic vision perception.",
     ],
   },
   {
@@ -43,8 +43,8 @@ export const experience = [
     location: "Global",
     period: "2025 – Present",
     bullets: [
-      "Merged 10+ PRs across providers, testing, and core: fixes include a multi-worker race condition (atomic file locking), SQLAlchemy URL property implementations across 3 provider hooks, and Playwright E2E test stability via locator-based waits.",
-      "Engaged directly with core maintainers Jarek Potiuk and Jason Liu on architecture trade-offs, iterating design decisions via Slack and GitHub before opening PRs to shorten review cycles.",
+      "Merged 10+ PRs across providers, core, and testing infrastructure: resolved a multi-worker race condition via atomic file locking, implemented SQLAlchemy URL properties across 3 provider hooks, and stabilized Playwright E2E tests using locator-based waits.",
+      "Collaborated directly with core maintainers Jarek Potiuk and Jason Liu on architecture decisions, iterating designs via Slack and GitHub reviews before opening PRs to shorten review cycles.",
     ],
     tech: "Python, SQLAlchemy, Pytest, Playwright",
   },
@@ -57,9 +57,9 @@ export const projects = [
     github: "https://github.com/Pyasma/reflectai-dev-journal",
     live: "https://reflect-ai-journal.netlify.app",
     bullets: [
-      "Full-stack journaling platform that auto-generates AI summaries of coding sessions using Gemini, with GitHub OAuth integration and repository sync.",
-      "Built rich text editing (Tiptap), a timeline view, analytics dashboard, and full-text search across all journal entries.",
-      "Supports three session types (Development, Maintenance, Planning) with customizable AI prompts per session.",
+      "Designed and built a full-stack AI journaling platform with GitHub OAuth, Gemini-powered session summaries, and Supabase persistence across 3 session types: Development, Maintenance, and Planning.",
+      "Implemented rich text editing (Tiptap), an activity timeline, analytics dashboard, and full-text search, delivering a complete developer reflection workflow in a single app.",
+      "Enabled per-session customizable AI prompts, giving users direct control over how Gemini interprets and summarizes their work.",
     ],
   },
   {
@@ -68,8 +68,8 @@ export const projects = [
     github: "https://github.com/Pyasma/compyle",
     live: "https://compyle.tracepanic.com",
     bullets: [
-      "Platform for discovering and sharing applications built with Compyle, enabling self-serve publishing for the first time.",
-      "Includes a custom component library, email template system with preview UI, and a Drizzle ORM data layer.",
+      "Designed and launched a community app showcase platform enabling self-serve publishing for the first time, built on Next.js with Drizzle ORM and TypeScript.",
+      "Built a custom component library, an email template system with live preview UI, and a structured database layer using Drizzle ORM.",
     ],
   },
   {
@@ -78,8 +78,8 @@ export const projects = [
     github: "https://github.com/Pyasma/slow-verse",
     live: "https://slow-verse-try.vercel.app",
     bullets: [
-      "Browser-based endless driving game with 3D assets, custom Lightning McQueen character models, and ambient gameplay.",
-      "Features Python-processed OBJ models, PWA manifest for installability, and randomized generation via Alea.js.",
+      "Developed a browser-based 3D endless driving game featuring custom Lightning McQueen character models pre-processed via Python OBJ scripts.",
+      "Implemented randomized track generation using Alea.js and added a PWA manifest for mobile installability.",
     ],
   },
   {
@@ -88,8 +88,8 @@ export const projects = [
     github: "https://github.com/Pyasma/gemini-chef",
     live: "https://gemini-chef-six.vercel.app",
     bullets: [
-      "AI-powered recipe generator: input your available ingredients and Gemini 2.5 Flash produces a structured, formatted recipe.",
-      "Validates a minimum of 4 ingredients before generation; renders output as markdown for clean, readable results.",
+      "Built an AI-powered recipe generator using Google Gemini 2.5 Flash that produces structured, markdown-formatted recipes from user-provided ingredients.",
+      "Enforced a minimum 4-ingredient threshold before generation and rendered output via react-markdown for clean, readable results.",
     ],
   },
   {
@@ -98,8 +98,8 @@ export const projects = [
     github: "https://github.com/Pyasma/Re-assembly-endgame",
     live: "https://re-assembly-endgame.vercel.app",
     bullets: [
-      "Word-guessing game with a programming twist: each wrong guess eliminates a programming language from existence.",
-      "Built with React Compiler enabled for performance optimization and full TypeScript type safety.",
+      "Developed a word-guessing game where each incorrect guess eliminates a programming language, built with React 19 and TypeScript.",
+      "Enabled React Compiler for automatic performance optimization and maintained full TypeScript type safety throughout.",
     ],
   },
   {
@@ -107,7 +107,7 @@ export const projects = [
     stack: ["JavaScript", "HTML", "CSS", "Node.js"],
     github: "https://github.com/Pyasma/Paranormal",
     bullets: [
-      "Event-driven web application with a Node.js server backend, structured around modular event handlers and utility layers.",
+      "Built an event-driven web application with a modular Node.js backend, organized across dedicated event handler, data, and utility layers.",
     ],
   },
   {
@@ -115,7 +115,7 @@ export const projects = [
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://searchdotcom.netlify.app",
     bullets: [
-      "Minimal search interface powered by Wikipedia: type a query and get encyclopedia-sourced results instantly.",
+      "Built a minimal search interface powered by the Wikipedia API, delivering instant encyclopedia-sourced results through a clean, single-input UI.",
     ],
   },
   {
@@ -123,7 +123,7 @@ export const projects = [
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://visitdelhi.netlify.app",
     bullets: [
-      "Atmospheric travel guide for Delhi, highlighting iconic spots like Chandni Chowk, India Gate, and Humayun's Tomb with evocative editorial copy.",
+      "Designed an atmospheric travel guide for Delhi featuring curated cultural highlights including Chandni Chowk, India Gate, and Humayun's Tomb with editorial copy.",
     ],
   },
   {
@@ -131,7 +131,7 @@ export const projects = [
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://scoringboard-games.netlify.app",
     bullets: [
-      "Real-time digital scoreboard for basketball, tracking home and guest scores with +1/+2/+3 increment buttons and a game reset.",
+      "Developed a real-time basketball scoreboard tracking home and guest scores with +1, +2, and +3 increment controls and a full game reset.",
     ],
   },
   {
@@ -139,7 +139,7 @@ export const projects = [
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://cheerful-fairy-229f93.netlify.app",
     bullets: [
-      "Browser-based Blackjack implementation: start a round, see your cards, track your running sum, and reset for the next hand.",
+      "Implemented a browser-based Blackjack game with card dealing, running sum tracking, and round management using vanilla JavaScript.",
     ],
   },
   {
@@ -147,7 +147,7 @@ export const projects = [
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://travel-journal-ochre-eight.vercel.app",
     bullets: [
-      "A clean travel journal UI for logging trips and destinations, styled for readability and easy browsing.",
+      "Built a travel journal interface for logging trips and destinations with a clean, readable layout using HTML, CSS, and JavaScript.",
     ],
   },
   {
@@ -179,8 +179,8 @@ export const education = [
 ];
 
 export const achievements = [
-  "Research paper accepted at ICIEV/IVPR (oral + poster) for advancements in robotics and computer vision, co-authored during international research internship at Kyushu Institute of Technology, Japan.",
-  "Selected for international ML research internship in Japan as an undergraduate, sole student from institution placed at Kyushu Institute of Technology's robotics lab.",
+  "Research accepted as oral and poster presentation at ICIEV/IVPR international conference for advancements in robotic vision perception, co-authored during a research internship at Kyushu Institute of Technology, Japan.",
+  "Selected as the sole student from institution for an international ML research internship at Kyushu Institute of Technology's robotics lab in Fukuoka, Japan.",
 ];
 
 export const blogs = [
