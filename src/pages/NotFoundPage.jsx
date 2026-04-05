@@ -10,7 +10,7 @@ export default function NotFoundPage() {
       </p>
       <Link
         to="/"
-        className="px-5 py-2 bg-gray-900 text-gray-900 text-sm rounded-full border border-gray-900 hover:bg-black hover:text-white hover:border-black transition-all duration-200"
+        className="px-5 py-2 bg-gray-200 text-gray-900 text-sm rounded-full border border-gray-900 hover:bg-gray-500 hover:text-white hover:border-black transition-all duration-200"
       >
         Back home
       </Link>
