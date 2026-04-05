@@ -30,7 +30,7 @@ export default function ProjectsPage() {
                 <div className="flex gap-2 shrink-0">
                   {p.live && (
                     <a href={p.live} target="_blank" rel="noopener noreferrer"
-                      className="text-xs text-gray-400 hover:text-gray-900 transition-colors whitespace-nowrap">
+                      className="text-xs text-gray-900 hover:underline transition-colors whitespace-nowrap">
                       Live →
                     </a>
                   )}

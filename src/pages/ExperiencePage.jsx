@@ -43,7 +43,7 @@ export default function ExperiencePage() {
             {job.tech && (
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {job.tech.split(", ").map((t, j) => (
-                  <span key={j} className="bg-gray-900 text-gray-900 text-xs px-2 py-0.5 rounded">{t}</span>
+                  <span key={j} className="bg-gray-200 text-gray-900 text-xs px-2 py-0.5 rounded">{t}</span>
                 ))}
               </div>
             )}
@@ -59,7 +59,7 @@ export default function ExperiencePage() {
               className="leading-relaxed flex gap-2 animate-item"
               style={{ animationDelay: `${i * 60}ms` }}
             >
-              <span className="text-gray-900 select-none mt-0.5 shrink-0">›</span>
+              <span className="text-gray-200 select-none mt-0.5 shrink-0">›</span>
               <span><Highlight text={a} /></span>
             </li>
           ))}
@@ -77,7 +77,7 @@ export default function ExperiencePage() {
               <p className="font-semibold text-gray-900 text-xs mb-1.5">{s.label}</p>
               <div className="flex flex-wrap gap-1.5">
                 {s.value.split(", ").map((skill, j) => (
-                  <span key={j} className="bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded hover:bg-gray-900 hover:text-gray-900 transition-all duration-200 cursor-default">{skill}</span>
+                  <span key={j} className="bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded hover:text-gray-900 transition-all duration-200 cursor-default">{skill}</span>
                 ))}
               </div>
             </div>

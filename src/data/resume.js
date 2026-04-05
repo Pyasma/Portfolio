@@ -63,16 +63,6 @@ export const projects = [
     ],
   },
   {
-    title: "Gemini Chef",
-    stack: ["React", "Vite", "Google Gemini 2.5 Flash"],
-    github: "https://github.com/Pyasma/gemini-chef",
-    live: "https://gemini-chef-six.vercel.app",
-    bullets: [
-      "AI-powered recipe generator: input your available ingredients and Gemini 2.5 Flash produces a structured, formatted recipe.",
-      "Validates a minimum of 4 ingredients before generation; renders output as markdown for clean, readable results.",
-    ],
-  },
-  {
     title: "Compyle Apps Showcase",
     stack: ["Next.js", "TypeScript", "Drizzle ORM", "pnpm"],
     github: "https://github.com/Pyasma/compyle",
@@ -83,16 +73,6 @@ export const projects = [
     ],
   },
   {
-    title: "Assembly: Endgame",
-    stack: ["React", "TypeScript", "Vite"],
-    github: "https://github.com/Pyasma/Re-assembly-endgame",
-    live: "https://re-assembly-endgame.vercel.app",
-    bullets: [
-      "Word-guessing game with a programming twist: each wrong guess eliminates a programming language from existence.",
-      "Built with React Compiler enabled for performance optimization and full TypeScript type safety.",
-    ],
-  },
-  {
     title: "Piwu: Endless Driving Game",
     stack: ["JavaScript", "HTML5", "CSS", "Three.js"],
     github: "https://github.com/Pyasma/slow-verse",
@@ -100,6 +80,26 @@ export const projects = [
     bullets: [
       "Browser-based endless driving game with 3D assets, custom Lightning McQueen character models, and ambient gameplay.",
       "Features Python-processed OBJ models, PWA manifest for installability, and randomized generation via Alea.js.",
+    ],
+  },
+  {
+    title: "Gemini Chef",
+    stack: ["React", "Vite", "Google Gemini 2.5 Flash"],
+    github: "https://github.com/Pyasma/gemini-chef",
+    live: "https://gemini-chef-six.vercel.app",
+    bullets: [
+      "AI-powered recipe generator: input your available ingredients and Gemini 2.5 Flash produces a structured, formatted recipe.",
+      "Validates a minimum of 4 ingredients before generation; renders output as markdown for clean, readable results.",
+    ],
+  },
+  {
+    title: "Assembly: Endgame",
+    stack: ["React", "TypeScript", "Vite"],
+    github: "https://github.com/Pyasma/Re-assembly-endgame",
+    live: "https://re-assembly-endgame.vercel.app",
+    bullets: [
+      "Word-guessing game with a programming twist: each wrong guess eliminates a programming language from existence.",
+      "Built with React Compiler enabled for performance optimization and full TypeScript type safety.",
     ],
   },
   {
