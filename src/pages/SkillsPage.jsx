@@ -19,9 +19,9 @@ export default function SkillsPage() {
         {education.map((e, i) => (
           <div key={i} className="mb-4">
             <p className="font-semibold text-gray-900 text-sm">{e.degree}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{e.period}</p>
-            <p className="text-sm text-gray-400 mt-0.5">{e.school} · {e.location}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{e.detail}</p>
+            <p className="text-xs text-gray-500 mt-0.5">{e.period}</p>
+            <p className="text-sm text-gray-600 mt-0.5">{e.school} · {e.location}</p>
+            <p className="text-xs text-gray-500 mt-0.5">{e.detail}</p>
           </div>
         ))}
       </Section>
