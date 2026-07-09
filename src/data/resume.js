@@ -1,15 +1,16 @@
+import resumePdf from "../assets/resume/PiyushResume.pdf";
+
 export const profile = {
   name: "Piyush Mudgal",
-  tagline: "Graduate Software Engineer · Open Source Contributor · Linux (Arch)",
+  tagline: "Software Engineer · Open Source Contributor · Linux (Arch)",
   location: "New Delhi, India",
   email: "pranyasharma55555@gmail.com",
-  phone: "+91 8178283764",
   github: "https://github.com/Pyasma",
   linkedin: "https://www.linkedin.com/in/piyush-mudgal",
   heroDescription:
     "Shipped my first website at 18 and haven't stopped since. I'm a full-stack developer with a deep interest in backend systems, machine learning, and data pipelines, comfortable anywhere from crafting REST APIs to training neural networks. These days I spend most of my energy in open source, contributing to real codebases and learning from engineers far more experienced than me. I think the best developers slow down before they write a single line, because a well-framed problem almost writes its own solution.",
-  ossStatus:
-    "Currently contributing to Apache Airflow (Apache Software Foundation). Merged 10+ PRs across providers, core, and E2E testing.",
+  ossStatus: `Actively Contributing to OSS.`,
+  resumeUrl: resumePdf,
   openToWork: true,
 };
 
@@ -52,8 +53,35 @@ export const experience = [
 
 export const projects = [
   {
+    title: "CodeMemory",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Turborepo",
+      "Cognee AI",
+      "Prisma",
+      "PostgreSQL",
+      "Clerk",
+      "Gemini API",
+    ],
+    github: "https://github.com/Pyasma/CodeMemory",
+    live: "https://code-memory-codememory-pnrb.vercel.app",
+    bullets: [
+      "Built a full-stack app that indexes GitHub repos into a structured, graph-based memory using Cognee AI, enabling contextual codebase recall across sessions.",
+      "Designed a monorepo architecture with Turborepo, shared Prisma schema, and Next.js apps for workspace review and commit diff exploration.",
+      "Implemented commit syncing, expandable IDE-style diffs, and agent-ready repo memory tied to user accounts.",
+    ],
+  },
+  {
     title: "ReflectAI: Developer Journal",
-    stack: ["Next.js 15", "React 19", "TypeScript", "Supabase", "Gemini API", "GitHub OAuth"],
+    stack: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "Gemini API",
+      "GitHub OAuth",
+    ],
     github: "https://github.com/Pyasma/reflectai-dev-journal",
     live: "https://reflect-ai-journal.netlify.app",
     bullets: [
@@ -135,14 +163,6 @@ export const projects = [
     ],
   },
   {
-    title: "Blackjack",
-    stack: ["HTML", "CSS", "JavaScript"],
-    live: "https://cheerful-fairy-229f93.netlify.app",
-    bullets: [
-      "Implemented a browser-based Blackjack game with card dealing, running sum tracking, and round management using vanilla JavaScript.",
-    ],
-  },
-  {
     title: "Travel Journal",
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://travel-journal-ochre-eight.vercel.app",
@@ -151,21 +171,37 @@ export const projects = [
     ],
   },
   {
-    title: "ReZero (WIP)",
-    stack: ["React", "Vite"],
-    live: "https://rezero-sigma.vercel.app",
+    title: "Blackjack",
+    stack: ["HTML", "CSS", "JavaScript"],
+    live: "https://cheerful-fairy-229f93.netlify.app",
     bullets: [
-      "Work in progress, currently in early development.",
+      "Implemented a browser-based Blackjack game with card dealing, running sum tracking, and round management using vanilla JavaScript.",
     ],
   },
 ];
 
 export const skills = [
-  { label: "Languages", value: "Java, Python, R, SQL, TypeScript, HTML, CSS" },
-  { label: "Frontend / Backend", value: "React, Next.js, Spring Boot, REST APIs, Spring Data JPA, Microservices, Docker, AWS, CI/CD, pre-commit hooks" },
-  { label: "AI / ML", value: "PyTorch, Scikit-Learn, CNN, RNN, LSTM, RAG, LLMs, Prompt Engineering, OpenAI API, Gemini, Vector Databases" },
-  { label: "Databases & Tools", value: "PostgreSQL, MySQL, MongoDB, Git, GitHub, Postman, SQLAlchemy, Playwright" },
-  { label: "Linux & Open Source", value: "Arch Linux (daily driver), Hyprland, GNOME, AUR, Apache Airflow Breeze" },
+  { label: "Languages", value: "Python, TypeScript" },
+  {
+    label: "Frontend / Backend",
+    value:
+      "React, Next.js, REST APIs, Microservices, Docker, AWS, CI/CD, pre-commit hooks, MonoRepo, Clerk, Auth",
+  },
+  {
+    label: "AI / ML",
+    value:
+      "PyTorch, Scikit-Learn, CNN, RNN, LSTM, RAG, LLMs, Prompt Engineering, OpenAI API, Gemini API, Vector Databases, Agents",
+  },
+  {
+    label: "Databases & Tools",
+    value:
+      "PostgreSQL, MySQL, MongoDB, Git, GitHub, Postman, SQLAlchemy, Playwright, Vitest",
+  },
+  {
+    label: "Linux & Open Source",
+    value:
+      "Arch Linux (daily driver), Hyprland, GNOME, AUR, Apache Airflow Breeze",
+  },
 ];
 
 export const education = [
@@ -174,7 +210,8 @@ export const education = [
     school: "Dronacharya College of Engineering",
     location: "Gurugram, Haryana",
     period: "Nov 2021 – Jul 2025",
-    detail: "CGPA: 7.2 · Coursework: DSA, Distributed Systems, Neural Networks, Operating Systems",
+    detail:
+      "CGPA: 7.2 · Coursework: DSA, Distributed Systems, Neural Networks, Operating Systems",
   },
 ];
 
@@ -188,6 +225,7 @@ export const blogs = [
     title: "Git Guide: Your Project's Storybook",
     url: "https://git-for-everyone.hashnode.dev/git-guide-your-projects-storybook",
     date: "2025",
-    summary: "A beginner-friendly guide to Git, treating your project's history as a storybook of decisions, changes, and progress.",
+    summary:
+      "A beginner-friendly guide to Git, treating your project's history as a storybook of decisions, changes, and progress.",
   },
 ];
