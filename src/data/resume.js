@@ -2,52 +2,104 @@ import resumePdf from "../assets/resume/PiyushResume.pdf";
 
 export const profile = {
   name: "Piyush Mudgal",
-  tagline: "Software Engineer · Open Source Contributor · Linux (Arch)",
+  handle: "Pyasma",
+  headline: "I write code.",
+  tagline: "AI/ML Engineer · Open Source Engineer · Linux (Arch / Ubuntu)",
   location: "New Delhi, India",
+  timezone: "Asia/Kolkata",
   email: "pranyasharma55555@gmail.com",
   github: "https://github.com/Pyasma",
   linkedin: "https://www.linkedin.com/in/piyush-mudgal",
+  twitter: "https://x.com/MudgalPiyu49658",
+  cal: "https://cal.com/piyush-mudgal-1k0win",
+  website: "https://pyasma.vercel.app",
+  status: "learning neovim, and working on OSS 🫡",
   heroDescription:
     "Shipped my first website at 18 and haven't stopped since. I'm a full-stack developer with a deep interest in backend systems, machine learning, and data pipelines, comfortable anywhere from crafting REST APIs to training neural networks. These days I spend most of my energy in open source, contributing to real codebases and learning from engineers far more experienced than me. I think the best developers slow down before they write a single line, because a well-framed problem almost writes its own solution.",
-  ossStatus: `Actively Contributing to OSS.`,
+  ossStatus: "Actively contributing to OSS.",
   resumeUrl: resumePdf,
   openToWork: true,
 };
 
+export const wakatime = {
+  username: "Pyasma",
+  userId: "8d840055-21c4-48ea-97c2-a2dbcfa43600",
+  profileUrl: "https://wakatime.com/@8d840055-21c4-48ea-97c2-a2dbcfa43600",
+  badgeUrl:
+    "https://wakatime.com/badge/user/8d840055-21c4-48ea-97c2-a2dbcfa43600.svg?style=flat-square",
+  since: "Apr 5 2026",
+};
+
+export const openSource = [
+  {
+    project: "Apache Airflow",
+    role: "Contributor",
+    period: "2025 – Present",
+    url: "https://github.com/apache/airflow",
+    blurb: "Data orchestration platform with 44k+ GitHub stars, used by 70,000+ companies.",
+    bullets: [
+      "Fixed a race condition in FabAuthManager and resolved a startup race condition in the API server, eliminating database integrity errors.",
+      "Implemented SQLAlchemy-compatible sqlalchemy_url properties for Presto, Vertica, and Impala hooks, and fixed Connection.get_uri() for non-string extras.",
+      "25+ PRs merged across core, providers, and testing; engaged with core maintainers to align designs with community norms before opening PRs.",
+    ],
+    tech: "Python, SQLAlchemy, Pytest, Playwright",
+  },
+  {
+    project: "Observal (BlazeUp-AI)",
+    role: "Contributor · Moderator",
+    period: "2026 – Present",
+    url: "https://github.com/BlazeUp-AI",
+    blurb: "Self-hosted agent registry and analytics platform for AI coding agents (2.1k+ GitHub stars).",
+    bullets: [
+      "Authored unit test suites for observal_cli, covering command parsing, output formatting, and edge-case handling.",
+      "Implemented a coverage threshold ratchet to enforce incremental coverage gains and prevent regressions in untested modules.",
+      "Resolved patch-target and mocking issues flagged during PR review, aligning test mocks with unittest.mock best practices.",
+    ],
+    tech: "Python, Pytest, unittest.mock",
+  },
+];
+
 export const experience = [
   {
-    role: "Software Engineer: Product & Developer Experience",
+    role: "Software Engineer, Product & DX",
     company: "Compyle (YC-backed)",
     location: "Remote",
     period: "Nov 2025 – Feb 2026",
     bullets: [
-      "Built the Compyle Apps Showcase from scratch, a full-stack discovery platform enabling community self-serve app publishing for the first time. (TypeScript, REST APIs)",
-      "Authored comprehensive developer documentation covering project setup, deployment workflows, and Git practices, adopted as the canonical onboarding reference across all new contributors.",
+      "Designed and built the Compyle Apps Showcase from scratch, a self-serve publishing platform removing the team's main submission bottleneck.",
+      "Built a reusable component library and email template system with live preview, improving frontend consistency across the platform.",
+      "Authored official engineering documentation covering setup, deployment, and Git practices.",
     ],
+    tech: "Next.js, TypeScript, Drizzle ORM, REST APIs, Resend, Vercel, GitHub Actions, CI/CD",
   },
   {
-    role: "ML Intern: Robotics & Computer Vision",
+    role: "ML Research Intern",
     company: "Kyushu Institute of Technology",
     location: "Fukuoka, Japan",
     period: "Feb 2025 – May 2025",
     bullets: [
-      "Designed and built a vision-based robotic perception system using Python and Intel RealSense, achieving 95% object detection accuracy with real-time distance estimation.",
-      "Trained a CNN + LSTM gesture recognition pipeline on 100K+ hand gesture samples, enabling real-time robotic arm control at 90%+ accuracy.",
-      "Reduced model training time by 60% through redesigned preprocessing and feature engineering pipelines.",
-      "Co-authored a research paper accepted at ICIEV/IVPR (oral and poster presentation) on advances in robotic vision perception.",
+      "Designed and implemented a CNN + LSTM based robotic perception system, achieving 95% object detection and 90%+ gesture recognition accuracy on a dataset of over 100K samples.",
+      "Redesigned the data preprocessing pipeline, reducing model training time by 60% and enabling significantly faster experimentation cycles.",
+      "Co-authored a research paper accepted at ICIEV/IVPR and presented findings on robotic perception at the conference.",
     ],
+    tech: "Python, PyTorch, OpenCV, LSTM",
+  },
+];
+
+export const community = [
+  {
+    org: "Observal (BlazeUp-AI)",
+    role: "Moderator & Contributor",
+    period: "2026 – Present",
+    detail:
+      "Review and merge community contributions, write unit tests, and help new contributors navigate the codebase and contribution workflow.",
   },
   {
-    role: "Open Source Contributor",
-    company: "Apache Airflow",
-    companyUrl: "https://github.com/apache/airflow",
-    location: "Global",
+    org: "Compyle (YC-backed)",
+    role: "Community Manager & Moderator",
     period: "2025 – Present",
-    bullets: [
-      "Merged 10+ PRs across providers, core, and testing infrastructure: resolved a multi-worker race condition via atomic file locking, implemented SQLAlchemy URL properties across 3 provider hooks, and stabilized Playwright E2E tests using locator-based waits.",
-      "Collaborated directly with core maintainers Jarek Potiuk and Jason Liu on architecture decisions, iterating designs via Slack and GitHub reviews before opening PRs to shorten review cycles.",
-    ],
-    tech: "Python, SQLAlchemy, Pytest, Playwright",
+    detail:
+      "Manage and moderate the developer community, supporting onboarding and surfacing feedback to the engineering team.",
   },
 ];
 
@@ -66,6 +118,9 @@ export const projects = [
     ],
     github: "https://github.com/Pyasma/CodeMemory",
     live: "https://code-memory-codememory-pnrb.vercel.app",
+    featured: true,
+    summary:
+      "Indexes GitHub repos into a graph-based memory using Cognee AI, enabling contextual codebase recall across sessions.",
     bullets: [
       "Built a full-stack app that indexes GitHub repos into a structured, graph-based memory using Cognee AI, enabling contextual codebase recall across sessions.",
       "Designed a monorepo architecture with Turborepo, shared Prisma schema, and Next.js apps for workspace review and commit diff exploration.",
@@ -84,6 +139,9 @@ export const projects = [
     ],
     github: "https://github.com/Pyasma/reflectai-dev-journal",
     live: "https://reflect-ai-journal.netlify.app",
+    featured: true,
+    summary:
+      "AI journaling platform for developers with Gemini-powered session summaries and a full reflection workflow.",
     bullets: [
       "Designed and built a full-stack AI journaling platform with GitHub OAuth, Gemini-powered session summaries, and Supabase persistence across 3 session types: Development, Maintenance, and Planning.",
       "Implemented rich text editing (Tiptap), an activity timeline, analytics dashboard, and full-text search, delivering a complete developer reflection workflow in a single app.",
@@ -95,6 +153,9 @@ export const projects = [
     stack: ["Next.js", "TypeScript", "Drizzle ORM", "pnpm"],
     github: "https://github.com/Pyasma/compyle",
     live: "https://compyle.tracepanic.com",
+    featured: true,
+    summary:
+      "Community app showcase platform enabling self-serve publishing for a YC-backed developer tools company.",
     bullets: [
       "Designed and launched a community app showcase platform enabling self-serve publishing for the first time, built on Next.js with Drizzle ORM and TypeScript.",
       "Built a custom component library, an email template system with live preview UI, and a structured database layer using Drizzle ORM.",
@@ -105,6 +166,9 @@ export const projects = [
     stack: ["JavaScript", "HTML5", "CSS", "Three.js"],
     github: "https://github.com/Pyasma/slow-verse",
     live: "https://slow-verse-try.vercel.app",
+    featured: true,
+    summary:
+      "Browser-based 3D endless driving game with randomized track generation and PWA installability.",
     bullets: [
       "Developed a browser-based 3D endless driving game featuring custom Lightning McQueen character models pre-processed via Python OBJ scripts.",
       "Implemented randomized track generation using Alea.js and added a PWA manifest for mobile installability.",
@@ -115,6 +179,8 @@ export const projects = [
     stack: ["React", "Vite", "Google Gemini 2.5 Flash"],
     github: "https://github.com/Pyasma/gemini-chef",
     live: "https://gemini-chef-six.vercel.app",
+    summary:
+      "AI recipe generator producing structured, markdown-formatted recipes from user ingredients.",
     bullets: [
       "Built an AI-powered recipe generator using Google Gemini 2.5 Flash that produces structured, markdown-formatted recipes from user-provided ingredients.",
       "Enforced a minimum 4-ingredient threshold before generation and rendered output via react-markdown for clean, readable results.",
@@ -125,6 +191,8 @@ export const projects = [
     stack: ["React", "TypeScript", "Vite"],
     github: "https://github.com/Pyasma/Re-assembly-endgame",
     live: "https://re-assembly-endgame.vercel.app",
+    summary:
+      "Word-guessing game where every wrong guess eliminates a programming language.",
     bullets: [
       "Developed a word-guessing game where each incorrect guess eliminates a programming language, built with React 19 and TypeScript.",
       "Enabled React Compiler for automatic performance optimization and maintained full TypeScript type safety throughout.",
@@ -134,6 +202,7 @@ export const projects = [
     title: "Paranormal",
     stack: ["JavaScript", "HTML", "CSS", "Node.js"],
     github: "https://github.com/Pyasma/Paranormal",
+    summary: "Event-driven web app with a modular Node.js backend.",
     bullets: [
       "Built an event-driven web application with a modular Node.js backend, organized across dedicated event handler, data, and utility layers.",
     ],
@@ -142,6 +211,7 @@ export const projects = [
     title: "Search.com",
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://searchdotcom.netlify.app",
+    summary: "Minimal search interface powered by the Wikipedia API.",
     bullets: [
       "Built a minimal search interface powered by the Wikipedia API, delivering instant encyclopedia-sourced results through a clean, single-input UI.",
     ],
@@ -150,6 +220,7 @@ export const projects = [
     title: "Visit Delhi",
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://visitdelhi.netlify.app",
+    summary: "Atmospheric travel guide for Delhi with curated cultural highlights.",
     bullets: [
       "Designed an atmospheric travel guide for Delhi featuring curated cultural highlights including Chandni Chowk, India Gate, and Humayun's Tomb with editorial copy.",
     ],
@@ -158,6 +229,7 @@ export const projects = [
     title: "Basketball Scoring Board",
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://scoringboard-games.netlify.app",
+    summary: "Real-time basketball scoreboard with increment controls and game reset.",
     bullets: [
       "Developed a real-time basketball scoreboard tracking home and guest scores with +1, +2, and +3 increment controls and a full game reset.",
     ],
@@ -166,6 +238,7 @@ export const projects = [
     title: "Travel Journal",
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://travel-journal-ochre-eight.vercel.app",
+    summary: "Trip logging interface with a clean, readable layout.",
     bullets: [
       "Built a travel journal interface for logging trips and destinations with a clean, readable layout using HTML, CSS, and JavaScript.",
     ],
@@ -174,6 +247,7 @@ export const projects = [
     title: "Blackjack",
     stack: ["HTML", "CSS", "JavaScript"],
     live: "https://cheerful-fairy-229f93.netlify.app",
+    summary: "Browser Blackjack with card dealing and round management in vanilla JS.",
     bullets: [
       "Implemented a browser-based Blackjack game with card dealing, running sum tracking, and round management using vanilla JavaScript.",
     ],
@@ -200,7 +274,7 @@ export const skills = [
   {
     label: "Linux & Open Source",
     value:
-      "Arch Linux (daily driver), Hyprland, GNOME, AUR, Apache Airflow Breeze",
+      "Arch Linux (daily driver), Neovim, Hyprland, GNOME, AUR, Apache Airflow Breeze",
   },
 ];
 
@@ -218,6 +292,7 @@ export const education = [
 export const achievements = [
   "Research accepted as oral and poster presentation at ICIEV/IVPR international conference for advancements in robotic vision perception, co-authored during a research internship at Kyushu Institute of Technology, Japan.",
   "Selected as the sole student from institution for an international ML research internship at Kyushu Institute of Technology's robotics lab in Fukuoka, Japan.",
+  "25+ PRs merged into Apache Airflow, a project with 44k+ GitHub stars used by 70,000+ companies, working toward committer status.",
 ];
 
 export const blogs = [
