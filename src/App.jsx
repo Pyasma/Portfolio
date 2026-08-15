@@ -24,7 +24,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="mx-auto min-h-screen max-w-3xl px-6">
+      <div className="mx-auto min-h-screen w-full max-w-[1400px] px-6 sm:px-10 lg:px-16">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/experience" element={<Navigate to="/#experience" replace />} />

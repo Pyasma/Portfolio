@@ -4,41 +4,36 @@ import Reveal from "./Reveal";
 
 export default function Blogs() {
   return (
-    <Section
-      id="blogs"
-      title="blogs"
-      subtitle="notes on open source, distributed systems, and things i broke first."
-    >
+    <Section id="blogs" title="blogs" kanji="記事">
       {blogs.length === 0 ? (
         <Reveal>
           <p className="text-sm text-muted-foreground">
-            <span className="text-prompt">$</span> ls posts/ — empty for now. code
-            ships faster than prose.
+            <span className="text-prompt">$</span> ls posts/ — empty for now.
           </p>
         </Reveal>
       ) : (
-        <div className="space-y-3">
+        <div className="grid gap-3 sm:grid-cols-2">
           {blogs.map((b, i) => (
             <Reveal key={b.url} delay={i * 50}>
               <a
                 href={b.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-4"
+                className="block h-full border border-border bg-card p-3 transition-colors hover:border-prompt"
               >
-                <span className="shrink-0 text-xs lowercase text-muted-foreground sm:w-24">
-                  {b.date}
-                </span>
-                <span className="min-w-0">
-                  <span className="text-sm lowercase group-hover:text-prompt">
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="font-display text-sm font-bold lowercase">
                     {b.title}
                   </span>
-                  {b.summary && (
-                    <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
-                      {b.summary}
-                    </span>
-                  )}
-                </span>
+                  <span className="shrink-0 text-xs text-muted-foreground">
+                    {b.date}
+                  </span>
+                </div>
+                {b.summary && (
+                  <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                    {b.summary}
+                  </p>
+                )}
               </a>
             </Reveal>
           ))}

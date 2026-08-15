@@ -14,6 +14,7 @@ export const profile = {
   cal: "https://cal.com/piyush-mudgal-1k0win",
   website: "https://pyasma.vercel.app",
   status: "learning neovim, and working on OSS 🫡",
+  bio: "Full-stack engineer working mostly in backend systems, ML pipelines, and open source. 25+ PRs merged into Apache Airflow.",
   heroDescription:
     "Shipped my first website at 18 and haven't stopped since. I'm a full-stack developer with a deep interest in backend systems, machine learning, and data pipelines, comfortable anywhere from crafting REST APIs to training neural networks. These days I spend most of my energy in open source, contributing to real codebases and learning from engineers far more experienced than me. I think the best developers slow down before they write a single line, because a well-framed problem almost writes its own solution.",
   ossStatus: "Actively contributing to OSS.",
@@ -36,7 +37,9 @@ export const openSource = [
     role: "Contributor",
     period: "2025 – Present",
     url: "https://github.com/apache/airflow",
-    blurb: "Data orchestration platform with 44k+ GitHub stars, used by 70,000+ companies.",
+    blurb: "Data orchestration platform with 44k+ GitHub stars.",
+    summary:
+      "25+ PRs merged across core, providers, and testing — race conditions, SQLAlchemy hooks, connection URIs.",
     bullets: [
       "Fixed a race condition in FabAuthManager and resolved a startup race condition in the API server, eliminating database integrity errors.",
       "Implemented SQLAlchemy-compatible sqlalchemy_url properties for Presto, Vertica, and Impala hooks, and fixed Connection.get_uri() for non-string extras.",
@@ -49,7 +52,9 @@ export const openSource = [
     role: "Contributor · Moderator",
     period: "2026 – Present",
     url: "https://github.com/BlazeUp-AI",
-    blurb: "Self-hosted agent registry and analytics platform for AI coding agents (2.1k+ GitHub stars).",
+    blurb: "Agent registry and analytics platform for AI coding agents (2.1k+ stars).",
+    summary:
+      "Wrote the observal_cli test suite and a coverage ratchet that blocks regressions.",
     bullets: [
       "Authored unit test suites for observal_cli, covering command parsing, output formatting, and edge-case handling.",
       "Implemented a coverage threshold ratchet to enforce incremental coverage gains and prevent regressions in untested modules.",
@@ -66,6 +71,8 @@ export const experience = [
     type: "Contract",
     location: "Remote",
     period: "Nov 2025 – Feb 2026",
+    summary:
+      "Built the Compyle Apps Showcase, a self-serve publishing platform, plus the component and email systems behind it.",
     bullets: [
       "Designed and built the Compyle Apps Showcase from scratch, a self-serve publishing platform removing the team's main submission bottleneck.",
       "Built a reusable component library and email template system with live preview, improving frontend consistency across the platform.",
@@ -78,6 +85,8 @@ export const experience = [
     company: "Kyushu Institute of Technology",
     location: "Fukuoka, Japan",
     period: "Feb 2025 – May 2025",
+    summary:
+      "CNN + LSTM robotic perception system at 95% detection accuracy; paper accepted at ICIEV/IVPR.",
     bullets: [
       "Designed and implemented a CNN + LSTM based robotic perception system, achieving 95% object detection and 90%+ gesture recognition accuracy on a dataset of over 100K samples.",
       "Redesigned the data preprocessing pipeline, reducing model training time by 60% and enabling significantly faster experimentation cycles.",
@@ -92,15 +101,13 @@ export const community = [
     org: "Observal (BlazeUp-AI)",
     role: "Moderator & Contributor",
     period: "2026 – Present",
-    detail:
-      "Review and merge community contributions, write unit tests, and help new contributors navigate the codebase and contribution workflow.",
+    detail: "Review and merge community contributions, onboard new contributors.",
   },
   {
     org: "Compyle (YC-backed)",
     role: "Community Manager & Moderator",
     period: "2025 – Present",
-    detail:
-      "Manage and moderate the developer community, supporting onboarding and surfacing feedback to the engineering team.",
+    detail: "Moderate the developer community and route feedback to engineering.",
   },
 ];
 
@@ -285,15 +292,14 @@ export const education = [
     school: "Dronacharya College of Engineering",
     location: "Gurugram, Haryana",
     period: "Nov 2021 – Jul 2025",
-    detail:
-      "CGPA: 7.2 · Coursework: DSA, Distributed Systems, Neural Networks, Operating Systems",
+    detail: "CGPA 7.2",
   },
 ];
 
 export const achievements = [
-  "Research accepted as oral and poster presentation at ICIEV/IVPR international conference for advancements in robotic vision perception, co-authored during a research internship at Kyushu Institute of Technology, Japan.",
-  "Selected as the sole student from institution for an international ML research internship at Kyushu Institute of Technology's robotics lab in Fukuoka, Japan.",
-  "25+ PRs merged into Apache Airflow, a project with 44k+ GitHub stars used by 70,000+ companies, working toward committer status.",
+  "Paper on robotic vision perception accepted at ICIEV/IVPR.",
+  "Only student from my institution picked for the Kyushu Institute of Technology robotics lab.",
+  "25+ PRs merged into Apache Airflow, working toward committer status.",
 ];
 
 export const blogs = [

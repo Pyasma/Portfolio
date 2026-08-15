@@ -40,8 +40,10 @@
   --color-accent: var(--accent);
   --color-prompt: var(--prompt);
 
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono",
-    Menlo, Consolas, "Liberation Mono", monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    Consolas, "Liberation Mono", monospace;
+  --font-display: "Space Grotesk", "IBM Plex Mono", ui-sans-serif, system-ui,
+    sans-serif;
   --font-sans: var(--font-mono);
 }
 

@@ -25,10 +25,11 @@ export default function Contact() {
     <Section
       id="contact"
       title="reach"
-      subtitle="open to backend, ml, and open source roles. fastest reply is email."
+      kanji="連絡"
+      subtitle="open to backend, ml, and open source roles."
     >
       <Reveal>
-        <form onSubmit={handleSubmit} className="max-w-[62ch]">
+        <form onSubmit={handleSubmit} className="max-w-[70ch]">
           <label
             htmlFor="message"
             className="text-sm text-muted-foreground"

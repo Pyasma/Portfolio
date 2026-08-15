@@ -13,7 +13,12 @@ const rows = [
 
 export default function About() {
   return (
-    <Section id="about" title="stack" subtitle={profile.ossStatus.toLowerCase()}>
+    <Section
+      id="about"
+      title="stack"
+      kanji="技術"
+      subtitle={profile.ossStatus.toLowerCase()}
+    >
       <Reveal className="relative overflow-hidden border-y border-border py-2">
         {rows.map((row, i) => (
           <Marquee

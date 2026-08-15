@@ -2,6 +2,7 @@ import { experience, education, achievements } from "../data/resume";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import TechIcon from "./TechIcon";
+import Expandable from "./Expandable";
 
 function Highlight({ text }) {
   const parts = text.split(/(\b\d+[+%KkxX]*\b)/g);
@@ -22,7 +23,7 @@ function Highlight({ text }) {
 
 export function Bullets({ items }) {
   return (
-    <ul className="mt-2 list-none space-y-1 text-sm text-muted-foreground">
+    <ul className="list-none space-y-1 text-sm text-muted-foreground">
       {items.map((b, i) => (
         <li key={i} className="flex gap-2 leading-relaxed">
           <span className="shrink-0 select-none text-prompt">-</span>
@@ -58,12 +59,12 @@ export function EntryHeader({ title, href, meta }) {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold lowercase hover:text-prompt"
+            className="font-display font-bold lowercase hover:text-prompt"
           >
             {title}
           </a>
         ) : (
-          <p className="font-bold lowercase">{title}</p>
+          <p className="font-display font-bold lowercase">{title}</p>
         )}
         {href && <span className="shrink-0 text-xs text-muted-foreground">↗</span>}
       </div>
@@ -74,45 +75,52 @@ export function EntryHeader({ title, href, meta }) {
 
 export default function Experience() {
   return (
-    <Section id="experience" title="work">
-      <div className="space-y-6">
+    <Section id="experience" title="work" kanji="仕事">
+      <div className="grid gap-4 sm:grid-cols-2">
         {experience.map((job, i) => (
           <Reveal key={job.company} delay={i * 60}>
-            <EntryHeader
-              title={job.company}
-              href={job.companyUrl}
-              meta={[job.role, job.type, job.location, job.period]
-                .filter(Boolean)
-                .join(" · ")}
-            />
-            <Bullets items={job.bullets} />
-            <TechTags tech={job.tech} />
+            <div className="h-full border border-border bg-card p-4 transition-colors hover:border-prompt">
+              <EntryHeader
+                title={job.company}
+                href={job.companyUrl}
+                meta={[job.role, job.type, job.location, job.period]
+                  .filter(Boolean)
+                  .join(" · ")}
+              />
+              <div className="mt-2">
+                <Expandable summary={job.summary}>
+                  <Bullets items={job.bullets} />
+                </Expandable>
+              </div>
+              <TechTags tech={job.tech} />
+            </div>
           </Reveal>
         ))}
       </div>
 
-      <Reveal className="mt-8">
-        <h3 className="text-sm lowercase text-muted-foreground">
-          <span className="text-prompt">$</span> education
-        </h3>
-        {education.map((e) => (
-          <div key={e.school} className="mt-2">
-            <p className="text-sm font-bold lowercase">{e.school}</p>
-            <p className="mt-0.5 text-xs lowercase text-muted-foreground">
-              {e.degree} · {e.location} · {e.period}
-            </p>
-            <p className="mt-0.5 text-xs lowercase text-muted-foreground">
-              {e.detail}
-            </p>
-          </div>
-        ))}
-      </Reveal>
+      <Reveal className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div>
+          <h3 className="text-xs lowercase text-muted-foreground">
+            <span className="text-prompt">$</span> education
+          </h3>
+          {education.map((e) => (
+            <div key={e.school} className="mt-2">
+              <p className="font-display text-sm font-bold lowercase">{e.school}</p>
+              <p className="mt-0.5 text-xs lowercase text-muted-foreground">
+                {e.degree} · {e.period} · {e.detail}
+              </p>
+            </div>
+          ))}
+        </div>
 
-      <Reveal className="mt-6">
-        <h3 className="text-sm lowercase text-muted-foreground">
-          <span className="text-prompt">$</span> highlights
-        </h3>
-        <Bullets items={achievements} />
+        <div>
+          <h3 className="text-xs lowercase text-muted-foreground">
+            <span className="text-prompt">$</span> highlights
+          </h3>
+          <div className="mt-2">
+            <Bullets items={achievements} />
+          </div>
+        </div>
       </Reveal>
     </Section>
   );

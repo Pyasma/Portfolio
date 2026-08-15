@@ -5,17 +5,17 @@ import Section from "./Section";
 import Reveal from "./Reveal";
 import TechIcon from "./TechIcon";
 
-function ProjectRow({ project }) {
+function ProjectCard({ project }) {
   const href = project.live || project.github || "#";
 
   return (
-    <div className="flex gap-3">
+    <div className="flex h-full flex-col border border-border bg-card transition-colors hover:border-prompt">
       {projectImages[project.title] && (
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden size-12 shrink-0 items-center justify-center overflow-hidden border border-border bg-card p-1 grayscale transition-all duration-300 hover:grayscale-0 sm:flex"
+          className="flex h-28 items-center justify-center overflow-hidden border-b border-border bg-muted p-2 grayscale transition-all duration-500 hover:grayscale-0"
         >
           <img
             src={projectImages[project.title]}
@@ -26,13 +26,13 @@ function ProjectRow({ project }) {
         </a>
       )}
 
-      <div className="min-w-0 flex-1">
+      <div className="flex flex-1 flex-col p-3">
         <div className="flex items-baseline justify-between gap-3">
           <a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold lowercase hover:text-prompt"
+            className="font-display text-sm font-bold lowercase hover:text-prompt"
           >
             {project.title}
           </a>
@@ -40,21 +40,26 @@ function ProjectRow({ project }) {
         </div>
 
         {project.summary && (
-          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
             {project.summary}
           </p>
         )}
 
-        <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
-          {project.stack.map((s) => (
-            <span key={s} className="inline-flex items-center gap-1.5 lowercase">
+        <div className="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-xs text-muted-foreground">
+          {project.stack.slice(0, 4).map((s) => (
+            <span key={s} className="inline-flex items-center gap-1 lowercase">
               <TechIcon name={s} className="size-3" />
               {s}
             </span>
           ))}
+          {project.stack.length > 4 && (
+            <span className="text-muted-foreground">
+              +{project.stack.length - 4}
+            </span>
+          )}
         </div>
 
-        <div className="mt-2 flex gap-4 text-xs">
+        <div className="mt-auto flex gap-3 pt-3 text-xs">
           {project.github && (
             <a
               href={project.github}
@@ -92,12 +97,12 @@ export default function Projects() {
     <Section
       id="projects"
       title="projects"
-      subtitle="things i built end to end, from first commit to deploy."
+      kanji="作品"
       action={
         <button
           type="button"
           onClick={() => setShowAll((v) => !v)}
-          className="shrink-0 text-xs text-muted-foreground transition-colors hover:text-foreground"
+          className="text-xs text-muted-foreground transition-colors hover:text-foreground"
         >
           <span className="text-prompt">[</span>
           {showAll ? "show featured" : `ls -a (${projects.length})`}
@@ -105,10 +110,10 @@ export default function Projects() {
         </button>
       }
     >
-      <div className="space-y-6">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {visible.map((p, i) => (
-          <Reveal key={p.title} delay={(i % 6) * 40}>
-            <ProjectRow project={p} />
+          <Reveal key={p.title} delay={(i % 6) * 40} className="h-full">
+            <ProjectCard project={p} />
           </Reveal>
         ))}
       </div>

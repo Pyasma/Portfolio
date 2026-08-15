@@ -66,7 +66,7 @@ export default function Navbar() {
   useShortcuts();
 
   return (
-    <nav className="sticky top-0 z-50 -mx-6 flex flex-wrap items-center gap-x-4 gap-y-1 border-b border-border bg-background/95 px-6 py-3 text-sm backdrop-blur">
+    <nav className="sticky top-0 z-50 -mx-6 flex flex-wrap items-center gap-x-4 gap-y-1 border-b border-border bg-background/95 px-6 py-3 text-sm backdrop-blur sm:-mx-10 sm:px-10 lg:-mx-16 lg:px-16">
       {links.map((l) => (
         <a
           key={l.id}
