@@ -1,6 +1,7 @@
 import { experience, education, achievements } from "../data/resume";
 import Section from "./Section";
 import Reveal from "./Reveal";
+import TechIcon from "./TechIcon";
 
 function Highlight({ text }) {
   const parts = text.split(/(\b\d+[+%KkxX]*\b)/g);
@@ -8,7 +9,7 @@ function Highlight({ text }) {
     <>
       {parts.map((part, i) =>
         /^\d/.test(part) ? (
-          <strong key={i} className="font-semibold text-foreground">
+          <strong key={i} className="font-bold text-foreground">
             {part}
           </strong>
         ) : (
@@ -21,10 +22,10 @@ function Highlight({ text }) {
 
 export function Bullets({ items }) {
   return (
-    <ul className="mt-3 list-none space-y-1.5 text-sm text-muted-foreground">
+    <ul className="mt-2 list-none space-y-1 text-sm text-muted-foreground">
       {items.map((b, i) => (
         <li key={i} className="flex gap-2 leading-relaxed">
-          <span className="mt-0.5 shrink-0 select-none text-foreground">›</span>
+          <span className="shrink-0 select-none text-prompt">-</span>
           <span>
             <Highlight text={b} />
           </span>
@@ -37,12 +38,10 @@ export function Bullets({ items }) {
 export function TechTags({ tech }) {
   if (!tech) return null;
   return (
-    <div className="mt-3 flex flex-wrap gap-1.5">
+    <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
       {tech.split(", ").map((t) => (
-        <span
-          key={t}
-          className="rounded-md bg-secondary px-2 py-0.5 text-xs text-secondary-foreground"
-        >
+        <span key={t} className="inline-flex items-center gap-1.5 lowercase">
+          <TechIcon name={t} className="size-3" />
           {t}
         </span>
       ))}
@@ -50,61 +49,68 @@ export function TechTags({ tech }) {
   );
 }
 
+export function EntryHeader({ title, href, meta }) {
+  return (
+    <>
+      <div className="flex items-baseline justify-between gap-3">
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold lowercase hover:text-prompt"
+          >
+            {title}
+          </a>
+        ) : (
+          <p className="font-bold lowercase">{title}</p>
+        )}
+        {href && <span className="shrink-0 text-xs text-muted-foreground">↗</span>}
+      </div>
+      <p className="mt-0.5 text-xs lowercase text-muted-foreground">{meta}</p>
+    </>
+  );
+}
+
 export default function Experience() {
   return (
-    <Section id="experience" title="Work" kanji="仕事">
-      <div className="space-y-3">
+    <Section id="experience" title="work">
+      <div className="space-y-6">
         {experience.map((job, i) => (
-          <Reveal key={job.company} delay={i * 80}>
-            <div className="rounded-2xl border border-border bg-card p-4 transition-colors hover:border-foreground/30">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <p className="font-semibold">{job.role}</p>
-                <p className="text-xs text-muted-foreground">{job.period}</p>
-              </div>
-              <p className="mt-0.5 text-sm text-muted-foreground">
-                {job.companyUrl ? (
-                  <a
-                    href={job.companyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground hover:underline"
-                  >
-                    {job.company}
-                  </a>
-                ) : (
-                  <span className="text-foreground">{job.company}</span>
-                )}
-                {" · "}
-                {job.location}
-              </p>
-              <Bullets items={job.bullets} />
-              <TechTags tech={job.tech} />
-            </div>
+          <Reveal key={job.company} delay={i * 60}>
+            <EntryHeader
+              title={job.company}
+              href={job.companyUrl}
+              meta={[job.role, job.type, job.location, job.period]
+                .filter(Boolean)
+                .join(" · ")}
+            />
+            <Bullets items={job.bullets} />
+            <TechTags tech={job.tech} />
           </Reveal>
         ))}
       </div>
 
       <Reveal className="mt-8">
-        <h3 className="mb-3 text-sm font-semibold text-muted-foreground">
-          Education
+        <h3 className="text-sm lowercase text-muted-foreground">
+          <span className="text-prompt">$</span> education
         </h3>
         {education.map((e) => (
-          <div key={e.school} className="mb-4 last:mb-0">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <p className="text-sm font-semibold">{e.degree}</p>
-              <p className="text-xs text-muted-foreground">{e.period}</p>
-            </div>
-            <p className="mt-0.5 text-sm text-muted-foreground">
-              {e.school} · {e.location}
+          <div key={e.school} className="mt-2">
+            <p className="text-sm font-bold lowercase">{e.school}</p>
+            <p className="mt-0.5 text-xs lowercase text-muted-foreground">
+              {e.degree} · {e.location} · {e.period}
             </p>
-            <p className="mt-0.5 text-xs text-muted-foreground">{e.detail}</p>
+            <p className="mt-0.5 text-xs lowercase text-muted-foreground">
+              {e.detail}
+            </p>
           </div>
         ))}
       </Reveal>
 
-      <Reveal className="mt-8">
-        <h3 className="mb-2 text-sm font-semibold text-muted-foreground">
-          Highlights
+      <Reveal className="mt-6">
+        <h3 className="text-sm lowercase text-muted-foreground">
+          <span className="text-prompt">$</span> highlights
         </h3>
         <Bullets items={achievements} />
       </Reveal>

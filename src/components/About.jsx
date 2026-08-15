@@ -13,15 +13,8 @@ const rows = [
 
 export default function About() {
   return (
-    <Section id="about" title="About" kanji="約">
-      <Reveal>
-        <div className="text-pretty text-[14px] leading-relaxed text-muted-foreground md:text-base">
-          <p>{profile.heroDescription}</p>
-          <p className="mt-3">{profile.ossStatus}</p>
-        </div>
-      </Reveal>
-
-      <Reveal delay={100} className="relative mt-6 overflow-hidden">
+    <Section id="about" title="stack" subtitle={profile.ossStatus.toLowerCase()}>
+      <Reveal className="relative overflow-hidden border-y border-border py-2">
         {rows.map((row, i) => (
           <Marquee
             key={i}

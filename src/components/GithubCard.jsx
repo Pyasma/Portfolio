@@ -129,13 +129,11 @@ function Heatmap({ days, dark }) {
   );
 }
 
-function Stat({ dot, label, value }) {
+function Stat({ label, value }) {
   return (
-    <div className="text-sm">
-      <span className="mr-1 text-muted-foreground">
-        {dot} {label}:
-      </span>
-      <span className="font-medium tabular-nums">{value ?? "—"}</span>
+    <div className="text-xs lowercase">
+      <span className="mr-1 text-muted-foreground">{label}</span>
+      <span className="tabular-nums">{value ?? "—"}</span>
     </div>
   );
 }
@@ -150,26 +148,14 @@ export default function GithubCard() {
       href={profile.github}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex h-full flex-col justify-between gap-3 rounded-2xl border border-border bg-[#f7f2f2] p-4 transition-transform duration-500 hover:scale-[0.98] dark:bg-[#0d1117]"
+      className="flex h-full flex-col justify-between gap-3 border border-border bg-card p-3 transition-colors hover:border-prompt"
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <svg
-            className="h-4 w-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-            <path d="M9 18c-4.51 2-5-2-7-2" />
-          </svg>
-          <span className="text-sm font-semibold">GitHub 実</span>
-        </div>
-        <span className="text-xs text-muted-foreground">
-          {contributions ? `${contributions.total} contributions` : `@${profile.handle}`}
+      <div className="flex items-baseline justify-between gap-3 text-xs">
+        <span className="lowercase">
+          <span className="text-prompt">$</span> gh stats --user {profile.handle}
+        </span>
+        <span className="shrink-0 text-muted-foreground">
+          {contributions ? `${contributions.total} commits/yr` : "↗"}
         </span>
       </div>
 
@@ -177,11 +163,11 @@ export default function GithubCard() {
         <Heatmap days={contributions.days} dark={dark} />
       )}
 
-      <div className="flex flex-row flex-wrap gap-x-5 gap-y-1">
-        <Stat dot="🔴" label="Stars" value={stats?.stars} />
-        <Stat dot="⚫" label="Squad" value={stats?.followers} />
-        <Stat dot="🔵" label="PRs" value={stats?.prs} />
-        <Stat dot="⚪" label="Repos" value={stats?.publicRepos} />
+      <div className="flex flex-row flex-wrap gap-x-4 gap-y-1">
+        <Stat label="stars" value={stats?.stars} />
+        <Stat label="followers" value={stats?.followers} />
+        <Stat label="prs" value={stats?.prs} />
+        <Stat label="repos" value={stats?.publicRepos} />
       </div>
     </a>
   );

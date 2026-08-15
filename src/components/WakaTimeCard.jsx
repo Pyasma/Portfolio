@@ -89,42 +89,28 @@ export default function WakaTimeCard() {
       href={wakatime.profileUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-full flex-col justify-between gap-3 rounded-2xl border border-border bg-card p-4 transition-transform duration-500 hover:scale-[0.98]"
+      className="flex h-full flex-col justify-between gap-3 border border-border bg-card p-3 transition-colors hover:border-prompt"
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <svg
-            className="h-4 w-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="9" />
-            <path d="M12 7v5l3 2" />
-          </svg>
-          <span className="text-sm font-semibold">WakaTime 時</span>
-        </div>
-        <span className="text-xs text-muted-foreground">
-          since {wakatime.since}
+      <div className="flex items-baseline justify-between gap-3 text-xs">
+        <span className="lowercase">
+          <span className="text-prompt">$</span> wakatime --last-7-days
+        </span>
+        <span className="shrink-0 lowercase text-muted-foreground">
+          since {wakatime.since.toLowerCase()}
         </span>
       </div>
 
       {stats?.total ? (
-        <div className="flex flex-wrap gap-x-6 gap-y-1">
-          <div>
-            <p className="text-lg font-semibold tabular-nums">{stats.total}</p>
-            <p className="text-xs text-muted-foreground">{stats.range}</p>
-          </div>
+        <div className="space-y-0.5 text-xs lowercase">
+          <p>
+            <span className="mr-1 text-muted-foreground">{stats.range}</span>
+            <span className="tabular-nums">{stats.total}</span>
+          </p>
           {stats.dailyAverage && (
-            <div>
-              <p className="text-lg font-semibold tabular-nums">
-                {stats.dailyAverage}
-              </p>
-              <p className="text-xs text-muted-foreground">daily average</p>
-            </div>
+            <p>
+              <span className="mr-1 text-muted-foreground">daily avg</span>
+              <span className="tabular-nums">{stats.dailyAverage}</span>
+            </p>
           )}
         </div>
       ) : (
@@ -142,9 +128,9 @@ export default function WakaTimeCard() {
       {stats?.languages?.length > 0 ? (
         <LanguageBar languages={stats.languages} />
       ) : (
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          Editor time tracked from Neovim and VS Code — mostly Python,
-          TypeScript, and config files I keep rewriting.
+        <p className="text-xs lowercase leading-relaxed text-muted-foreground">
+          editor time tracked from neovim — mostly python, typescript, and
+          config files i keep rewriting.
         </p>
       )}
 
@@ -153,7 +139,7 @@ export default function WakaTimeCard() {
           {stats.editors.map((e) => (
             <span
               key={e.name}
-              className="rounded-md bg-secondary px-2 py-0.5 text-xs text-secondary-foreground"
+              className="border border-border px-1.5 py-0.5 text-xs lowercase text-secondary-foreground"
             >
               {e.name} {Math.round(e.percent)}%
             </span>

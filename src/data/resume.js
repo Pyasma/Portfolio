@@ -63,6 +63,7 @@ export const experience = [
   {
     role: "Software Engineer, Product & DX",
     company: "Compyle (YC-backed)",
+    type: "Contract",
     location: "Remote",
     period: "Nov 2025 – Feb 2026",
     bullets: [

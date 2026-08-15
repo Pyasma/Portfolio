@@ -1,3 +1,5 @@
+import TechIcon from "./TechIcon";
+
 /**
  * Infinite horizontal scroller. Children are duplicated so the loop is seamless.
  */
@@ -18,8 +20,9 @@ export default function Marquee({ items, reverse = false, duration = "40s" }) {
           {items.map((item) => (
             <span
               key={item}
-              className="whitespace-nowrap rounded-md border border-border bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground"
+              className="inline-flex items-center gap-1.5 whitespace-nowrap border border-border bg-card px-2.5 py-1 text-xs lowercase text-secondary-foreground"
             >
+              <TechIcon name={item} className="size-4" />
               {item}
             </span>
           ))}
