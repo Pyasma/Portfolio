@@ -296,8 +296,10 @@ export const coreStack = [
   "Node.js",
   "PostgreSQL",
   "Docker",
-  "PyTorch",
+  "Git",
   "Apache Airflow",
+  "LLMs",
+  "RAG",
   "Arch Linux",
 ];
 
