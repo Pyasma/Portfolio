@@ -286,6 +286,21 @@ export const skills = [
   },
 ];
 
+// The handful of things I actually reach for daily. Rendered as a slow
+// rotating strip in the About section; the full list lives in `skills`.
+export const coreStack = [
+  "Python",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "PostgreSQL",
+  "Docker",
+  "PyTorch",
+  "Apache Airflow",
+  "Arch Linux",
+];
+
 export const education = [
   {
     degree: "B.Tech in Computer Science & Engineering (AI/ML Specialization)",
