@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Fades, un-blurs and lifts its children into place the first time they enter
- * the viewport.
+ * Lifts content into place the first time it enters the viewport.
  */
 export default function Reveal({ delay = 0, className = "", children, ...rest }) {
   const ref = useRef(null);

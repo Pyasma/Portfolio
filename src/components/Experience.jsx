@@ -3,6 +3,7 @@ import Section from "./Section";
 import Reveal from "./Reveal";
 import TechIcon from "./TechIcon";
 import Expandable from "./Expandable";
+import Typewriter from "./Typewriter";
 
 function Highlight({ text }) {
   const parts = text.split(/(\b\d+[+%KkxX]*\b)/g);
@@ -68,14 +69,16 @@ export function EntryHeader({ title, href, meta }) {
         )}
         {href && <span className="shrink-0 text-xs text-muted-foreground">↗</span>}
       </div>
-      <p className="mt-0.5 text-xs lowercase text-muted-foreground">{meta}</p>
+      <p className="mt-0.5 text-xs lowercase text-muted-foreground">
+        <Typewriter text={meta} speed={12} chunk={2} startOnView caret={false} />
+      </p>
     </>
   );
 }
 
 export default function Experience() {
   return (
-    <Section id="experience" title="work" kanji="仕事">
+    <Section id="experience" title="work">
       <div className="grid gap-4 sm:grid-cols-2">
         {experience.map((job, i) => (
           <Reveal key={job.company} delay={i * 60}>

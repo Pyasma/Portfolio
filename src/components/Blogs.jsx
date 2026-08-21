@@ -1,10 +1,11 @@
 import { blogs } from "../data/resume";
 import Section from "./Section";
 import Reveal from "./Reveal";
+import Typewriter from "./Typewriter";
 
 export default function Blogs() {
   return (
-    <Section id="blogs" title="blogs" kanji="記事">
+    <Section id="blogs" title="blogs">
       {blogs.length === 0 ? (
         <Reveal>
           <p className="text-sm text-muted-foreground">
@@ -31,7 +32,13 @@ export default function Blogs() {
                 </div>
                 {b.summary && (
                   <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-                    {b.summary}
+                    <Typewriter
+                      text={b.summary}
+                      speed={10}
+                      chunk={2}
+                      startOnView
+                      caret={false}
+                    />
                   </p>
                 )}
               </a>

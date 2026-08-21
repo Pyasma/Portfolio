@@ -1,16 +1,7 @@
-import { profile } from "../data/resume";
-import LocalTime from "./LocalTime";
+import { profile, socials } from "../data/resume";
+import Typewriter from "./Typewriter";
 import Reveal from "./Reveal";
-import Expandable from "./Expandable";
 import profileImg from "../assets/rmsubar-small.jpeg";
-
-const socials = [
-  { label: "github", href: profile.github },
-  { label: "linkedin", href: profile.linkedin },
-  { label: "x", href: profile.twitter },
-  { label: "email", href: `mailto:${profile.email}` },
-  { label: "cal", href: profile.cal },
-];
 
 function Tile({ label, value, href }) {
   const inner = (
@@ -52,26 +43,27 @@ export default function Hero() {
 
         <Reveal delay={60}>
           <h1 className="font-display mt-3 text-5xl font-bold lowercase tracking-tight sm:text-7xl">
-            {profile.handle.toLowerCase()}
-            <span className="caret ml-2 inline-block h-[0.7em] w-[0.45em] bg-prompt align-baseline" />
+            <Typewriter text={profile.handle.toLowerCase()} />
           </h1>
         </Reveal>
 
         <Reveal delay={100}>
           <p className="mt-3 text-sm lowercase text-muted-foreground">
-            {profile.name} · {profile.tagline.toLowerCase()}
+            <Typewriter
+              text={`${profile.name} · ${profile.tagline}`.toLowerCase()}
+              speed={16}
+              caret={false}
+            />
           </p>
         </Reveal>
 
         <Reveal delay={140} className="mt-5 max-w-[70ch]">
-          <Expandable summary={profile.bio} moreLabel="more">
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {profile.heroDescription}
-            </p>
-          </Expandable>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            <Typewriter text={profile.intro} speed={12} chunk={2} caret={false} />
+          </p>
         </Reveal>
 
-        <Reveal delay={200} className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+        <Reveal className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -88,7 +80,7 @@ export default function Hero() {
         </Reveal>
       </div>
 
-      <Reveal delay={120} className="grid grid-cols-2 gap-3 lg:grid-cols-2">
+      <Reveal className="grid grid-cols-2 gap-3 lg:grid-cols-2">
         <a
           href={profile.github}
           target="_blank"
@@ -101,8 +93,6 @@ export default function Hero() {
             className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
           />
         </a>
-        <Tile label="location" value={profile.location} />
-        <Tile label="local time" value={<LocalTime />} />
         <Tile
           label="status"
           value={profile.openToWork ? "open to work" : "heads down"}

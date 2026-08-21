@@ -4,6 +4,7 @@ import projectImages from "../data/projectImages";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import TechIcon from "./TechIcon";
+import Typewriter from "./Typewriter";
 
 function ProjectCard({ project }) {
   const href = project.live || project.github || "#";
@@ -41,7 +42,13 @@ function ProjectCard({ project }) {
 
         {project.summary && (
           <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-            {project.summary}
+            <Typewriter
+              text={project.summary}
+              speed={10}
+              chunk={2}
+              startOnView
+              caret={false}
+            />
           </p>
         )}
 
@@ -97,7 +104,6 @@ export default function Projects() {
     <Section
       id="projects"
       title="projects"
-      kanji="作品"
       action={
         <button
           type="button"

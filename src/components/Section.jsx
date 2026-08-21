@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
+import Typewriter from "./Typewriter";
 
-export default function Section({ id, title, kanji, subtitle, action, children }) {
+export default function Section({ id, title, subtitle, action, children }) {
   return (
     <section
       id={id}
@@ -8,16 +9,12 @@ export default function Section({ id, title, kanji, subtitle, action, children }
     >
       <Reveal className="lg:sticky lg:top-20 lg:self-start">
         <h2 className="font-display text-xl font-bold lowercase tracking-tight">
-          <span className="text-prompt">*</span> {title}
-          {kanji && (
-            <span className="ml-2 text-sm font-normal text-muted-foreground">
-              {kanji}
-            </span>
-          )}
+          <span className="text-prompt">*</span>{" "}
+          <Typewriter text={title} speed={60} startOnView caret={false} />
         </h2>
         {subtitle && (
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-            {subtitle}
+            <Typewriter text={subtitle} speed={14} chunk={2} startOnView caret={false} />
           </p>
         )}
         {action && <div className="mt-3">{action}</div>}

@@ -1,4 +1,4 @@
-import { profile, coreStack } from "../data/resume";
+import { coreStack } from "../data/resume";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import Marquee from "./Marquee";
@@ -8,8 +8,6 @@ export default function About() {
     <Section
       id="about"
       title="stack"
-      kanji="技術"
-      subtitle={profile.ossStatus.toLowerCase()}
     >
       <Reveal className="relative overflow-hidden border-y border-border py-3">
         <Marquee items={coreStack} duration="180s" />
